@@ -1,0 +1,27 @@
+mat-toolbar:first-child {
+  color: gray;
+  position: fixed;
+  z-index: 10;
+  top:0;
+  left: 0;
+  background-color:white;
+}
+mat-toolbar.subtoolbar  {
+  position: relative;
+  top: 1.5rem;
+  border-bottom: 1px solid black;
+  background-color: #607d8b;
+  color: white;
+  opacity: 0.8;
+}
+.logo {
+  position:relative;
+  top: 0.3em;
+}
+
+
+@media (min-width: 620px) {
+  mat-toolbar.subtoolbar  {
+    top: 2rem;
+  }
+}
