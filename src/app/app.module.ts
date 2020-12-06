@@ -1,3 +1,4 @@
+import { CriarEscolaComponent } from './@pages/criar-escola/criar-escola.component';
 import { ListarEscolasComponent } from './@pages/listar-escolas/listar-escolas.component';
 import { NgModule } from '@angular/core';
 import { SharedModule } from './@shared/shared.module';
@@ -15,7 +16,8 @@ import { NgProgressModule } from 'ngx-progressbar';
   declarations: [
     AppComponent,
     HeaderComponent,
-    ListarEscolasComponent
+    ListarEscolasComponent,
+    CriarEscolaComponent
   ],
   imports: [
     BrowserModule,
