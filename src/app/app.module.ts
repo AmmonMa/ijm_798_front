@@ -1,3 +1,4 @@
+import { ListarEscolasComponent } from './@pages/listar-escolas/listar-escolas.component';
 import { NgModule } from '@angular/core';
 import { SharedModule } from './@shared/shared.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -13,7 +14,8 @@ import { NgProgressModule } from 'ngx-progressbar';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    ListarEscolasComponent
   ],
   imports: [
     BrowserModule,
