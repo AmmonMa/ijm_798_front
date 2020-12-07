@@ -1,3 +1,4 @@
+import { RemoveConfirmationDialogComponent } from './../@pages/listar-escolas/remove-confirmation-dialog.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { NgModule } from '@angular/core';
@@ -18,7 +19,9 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 @NgModule({
-  declarations: [],
+  declarations: [
+    RemoveConfirmationDialogComponent
+  ],
   imports: [
     MatToolbarModule,
     MatButtonModule,
@@ -54,8 +57,11 @@ import {MatSortModule} from '@angular/material/sort';
     MatSidenavModule,
     MatDialogModule,
     MatTableModule,
-    MatSortModule
+    MatSortModule,
+    RemoveConfirmationDialogComponent
   ],
-  entryComponents: []
+  entryComponents: [
+    RemoveConfirmationDialogComponent
+  ]
 })
 export class SharedModule {}

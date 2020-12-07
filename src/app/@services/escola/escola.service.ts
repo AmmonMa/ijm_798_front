@@ -38,4 +38,9 @@ export class EscolaService {
                .post<number>(environment.API_PATH + 'escolas', formData);
   }
 
+  remove(id: number): Observable<boolean> {
+    return this.httpClient
+               .delete<boolean>(environment.API_PATH + 'escolas/' + id );
+  }
+
 }

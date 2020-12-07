@@ -24,7 +24,7 @@
         <button mat-icon-button [routerLink]="['/editar-escola/' + element.id]">
           <mat-icon>edit</mat-icon>
         </button>
-        <button mat-icon-button>
+        <button mat-icon-button (click)="remove(element.id)">
           <mat-icon>delete</mat-icon>
         </button>
         <button mat-icon-button>
