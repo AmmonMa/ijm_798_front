@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { EscolaService } from './../../@services/escola/escola.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -8,9 +9,13 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./criar-escola.component.css']
 })
 export class CriarEscolaComponent implements OnInit {
+  isLoading = false;
   criarEscolaForm: FormGroup;
-
-  constructor(private escolaService: EscolaService) {}
+  public masks = {
+    phone : ['(', /\d/, /\d/, ')', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
+    cnpj: [ /\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '/',  /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/]
+  };
+  constructor(private escolaService: EscolaService, private router: Router) {}
 
   ngOnInit(): void {
     this.criarEscolaForm = new FormGroup({
@@ -24,6 +29,10 @@ export class CriarEscolaComponent implements OnInit {
   }
 
   onSubmit(): void {
+    this.isLoading = true;
+    this.escolaService.create(this.criarEscolaForm.value).subscribe(_ => {
+      return this.router.navigate(['/escolas']);
+    });
 
   }
 }

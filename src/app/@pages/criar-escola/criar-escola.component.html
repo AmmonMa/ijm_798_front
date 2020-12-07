@@ -8,7 +8,7 @@
 
     <div class="form-container" fxFlex="90" fxLayout="row wrap"  fxLayoutGap="10px" >
 
-      <mat-form-field fxFlex="48">
+      <mat-form-field fxFlex="48" fxFlex.lt-md="100">
         <input
         type="text"
         matInput
@@ -17,7 +17,7 @@
         <mat-error>Nome da Escola Inválido</mat-error>
       </mat-form-field>
 
-      <mat-form-field fxFlex="48">
+      <mat-form-field fxFlex="48" fxFlex.lt-md="100">
         <input
         type="email"
         matInput
@@ -45,20 +45,22 @@
 
     <div class="form-container" fxFlex="90" fxLayout="row wrap" fxLayoutGap="10px">
 
-      <mat-form-field fxFlex="48">
+      <mat-form-field fxFlex="48" fxFlex.lt-md="100">
         <input
         type="text"
         matInput
         placehoder="Cnpj"
-        formControlName="cnpj">
+        formControlName="cnpj"
+        [textMask]="{mask: masks.cnpj}">
         <mat-hint>Cnpj</mat-hint>
       </mat-form-field>
 
-      <mat-form-field fxFlex="48">
+      <mat-form-field fxFlex="48" fxFlex.lt-md="100">
         <input
         type="text"
         matInput
         placehoder="Telefone"
+        [textMask]="{mask: masks.phone}"
         formControlName="telefone">
         <mat-hint>Telefone</mat-hint>
 
@@ -80,6 +82,6 @@
     </div>
 
 
-    <button fxFlex="50" mat-raised-button color="primary" type="submit" [disabled]="criarEscolaForm.invalid">CRIAR ESCOLA</button>
+    <button fxFlex="50" mat-raised-button color="primary" type="submit" [disabled]="criarEscolaForm.invalid || isLoading">CRIAR ESCOLA</button>
   </form>
 </mat-card>

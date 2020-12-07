@@ -11,6 +11,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgProgressModule } from 'ngx-progressbar';
+import { TextMaskModule } from 'angular2-text-mask';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { NgProgressModule } from 'ngx-progressbar';
     SharedModule,
     HttpClientModule,
     FlexLayoutModule,
-    NgProgressModule
+    NgProgressModule,
+    TextMaskModule
   ],
   providers: [],
   bootstrap: [AppComponent]

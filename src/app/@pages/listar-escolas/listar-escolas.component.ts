@@ -8,7 +8,7 @@ import { MatTableDataSource } from '@angular/material/table';
   styleUrls: ['./listar-escolas.component.css']
 })
 export class ListarEscolasComponent implements OnInit, AfterViewInit {
-  displayedColumns: string[] = ['id', 'nome', 'telefone', 'email', 'acoes'];
+  displayedColumns: string[] = ['id', 'nome',  'acoes'];
   dataSource;
   constructor(private escolaService: EscolaService) {}
 
