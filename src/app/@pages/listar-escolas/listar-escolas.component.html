@@ -27,7 +27,7 @@
         <button mat-icon-button (click)="remove(element.id)">
           <mat-icon>delete</mat-icon>
         </button>
-        <button mat-icon-button>
+        <button mat-icon-button [routerLink]="['/turmas/' + element.id]">
           <mat-icon>groups</mat-icon>
         </button>
       </div>

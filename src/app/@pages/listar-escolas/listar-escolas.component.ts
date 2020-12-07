@@ -1,4 +1,4 @@
-import { RemoveConfirmationDialogComponent } from './remove-confirmation-dialog.component';
+import { RemoveConfirmationDialogComponent } from './../../@shared/dialogs/remove-confirmation-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 import { EscolaService } from './../../@services/escola/escola.service';

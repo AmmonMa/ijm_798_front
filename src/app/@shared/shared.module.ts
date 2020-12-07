@@ -1,4 +1,4 @@
-import { RemoveConfirmationDialogComponent } from './../@pages/listar-escolas/remove-confirmation-dialog.component';
+import { RemoveConfirmationDialogComponent } from './dialogs/remove-confirmation-dialog.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { NgModule } from '@angular/core';

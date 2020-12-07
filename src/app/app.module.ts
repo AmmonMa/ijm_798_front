@@ -1,3 +1,6 @@
+import { EditarTurmaComponent } from './@pages/editar-turma/editar-turma.component';
+import { CriarTurmaComponent } from './@pages/criar-turma/criar-turma.component';
+import { ListarTurmasComponent } from './@pages/listar-turmas/listar-turmas.component';
 import { EditarEscolaComponent } from './@pages/editar-escola/editar-escola.component';
 import { CriarEscolaComponent } from './@pages/criar-escola/criar-escola.component';
 import { ListarEscolasComponent } from './@pages/listar-escolas/listar-escolas.component';
@@ -20,7 +23,10 @@ import { TextMaskModule } from 'angular2-text-mask';
     HeaderComponent,
     ListarEscolasComponent,
     CriarEscolaComponent,
-    EditarEscolaComponent
+    EditarEscolaComponent,
+    ListarTurmasComponent,
+    CriarTurmaComponent,
+    EditarTurmaComponent
   ],
   imports: [
     BrowserModule,

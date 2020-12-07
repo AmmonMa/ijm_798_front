@@ -1,0 +1,38 @@
+<mat-card>
+  <form
+    fxLayout="row wrap"
+    fxLayoutAlign="center center"
+    fxLayoutGap="10px"
+    [formGroup]="editarTurmaForm"
+    (ngSubmit)="onSubmit()">
+
+    <div class="form-container" fxFlex="90" fxLayout="row wrap"  fxLayoutGap="10px" >
+
+      <mat-form-field fxFlex="60" fxFlex.lt-md="100">
+        <input
+        type="text"
+        matInput
+        formControlName="nome">
+        <mat-hint>Nome da Turma</mat-hint>
+        <mat-error>Nome da Turma Inválido</mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field fxFlex="30" fxFlex.lt-md="100">
+        <input
+        type="number"
+        matInput
+        placehoder="Quantidade de Alunos"
+        formControlName="qtdAlunos">
+        <mat-hint>Quantidade de Alunos</mat-hint>
+        <mat-error>Quantidade de Alunos Inválido</mat-error>
+
+      </mat-form-field>
+
+
+    </div>
+
+
+    <button fxFlex="50" mat-raised-button color="primary" type="submit" [disabled]="editarTurmaForm.invalid || isLoading">SALVAR TURMA</button>
+  </form>
+</mat-card>
