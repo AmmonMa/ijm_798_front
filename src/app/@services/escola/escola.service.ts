@@ -22,10 +22,18 @@ export class EscolaService {
                .get<Escola[]>(environment.API_PATH + 'escolas');
   }
 
+  findById(id: number): Observable<Escola> {
+    return this.httpClient
+               .get<Escola>(environment.API_PATH + 'escolas/' + id);
+  }
+
+  update(id: number, formData): Observable<number> {
+    console.log(formData);
+    return this.httpClient
+               .put<number>(environment.API_PATH + 'escolas/' + id, formData);
+  }
+
   create(formData): Observable<number> {
-
-
-
     return this.httpClient
                .post<number>(environment.API_PATH + 'escolas', formData);
   }

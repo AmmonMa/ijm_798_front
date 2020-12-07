@@ -1,3 +1,4 @@
+import { EditarEscolaComponent } from './@pages/editar-escola/editar-escola.component';
 import { CriarEscolaComponent } from './@pages/criar-escola/criar-escola.component';
 import { ListarEscolasComponent } from './@pages/listar-escolas/listar-escolas.component';
 import { NgModule } from '@angular/core';
@@ -18,7 +19,8 @@ import { TextMaskModule } from 'angular2-text-mask';
     AppComponent,
     HeaderComponent,
     ListarEscolasComponent,
-    CriarEscolaComponent
+    CriarEscolaComponent,
+    EditarEscolaComponent
   ],
   imports: [
     BrowserModule,
