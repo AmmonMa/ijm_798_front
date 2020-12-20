@@ -25,6 +25,9 @@ export class EditarEscolaComponent implements OnInit {
     this.activatedRoute.params.subscribe((params) => {
       this.escolaService.findById(params.id)
           .subscribe(result => {
+            if(!result) {
+              return this.router.navigate(['/escolas']);
+            }
             this.idEscola = params.id;
             this.editarEscolaForm.setValue({
               nome: result.nome,

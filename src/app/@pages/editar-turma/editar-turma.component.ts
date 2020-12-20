@@ -22,6 +22,9 @@ export class EditarTurmaComponent implements OnInit {
     this.activatedRoute.params.subscribe((params) => {
       this.turmaService.findById(params.id)
           .subscribe(result => {
+            if(!result) {
+              return this.router.navigate(['/escolas'])
+            }
             this.idTurma = params.id;
             this.idEscola = result.escolaId;
             this.editarTurmaForm.setValue({
@@ -30,6 +33,7 @@ export class EditarTurmaComponent implements OnInit {
               escolaId: result.escolaId
             });
           });
+
     });
 
     this.editarTurmaForm = new FormGroup({

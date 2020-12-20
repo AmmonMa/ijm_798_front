@@ -2,11 +2,10 @@
   <form
     fxLayout="row wrap"
     fxLayoutAlign="center center"
-    fxLayoutGap="10px"
     [formGroup]="criarEscolaForm"
     (ngSubmit)="onSubmit()">
 
-    <div class="form-container" fxFlex="90" fxLayout="row wrap"  fxLayoutGap="10px" >
+    <div class="form-container" fxFlex="100" fxLayout="row wrap" >
 
       <mat-form-field fxFlex="48" fxFlex.lt-md="100">
         <input
@@ -28,10 +27,6 @@
         <mat-error>Email Inválido</mat-error>
       </mat-form-field>
 
-    </div>
-
-    <div class="form-container" fxFlex="90" fxLayout="row wrap" fxLayoutGap="10px">
-
       <mat-form-field fxFlex="100">
         <input
         type="text"
@@ -41,9 +36,6 @@
         <mat-hint>Razão Social</mat-hint>
 
       </mat-form-field>
-    </div>
-
-    <div class="form-container" fxFlex="90" fxLayout="row wrap" fxLayoutGap="10px">
 
       <mat-form-field fxFlex="48" fxFlex.lt-md="100">
         <input
@@ -65,10 +57,6 @@
         <mat-hint>Telefone</mat-hint>
 
       </mat-form-field>
-    </div>
-
-    <div class="form-container" fxFlex="90" fxLayout="row wrap" fxLayoutGap="10px">
-
 
       <mat-form-field fxFlex="100">
         <input
@@ -82,6 +70,7 @@
     </div>
 
 
-    <button fxFlex="50" mat-raised-button color="primary" type="submit" [disabled]="criarEscolaForm.invalid || isLoading">CRIAR ESCOLA</button>
+
+    <button fxFlex="50" mat-raised-button color="primary" type="submit" [disabled]="criarEscolaForm.invalid || isLoading">SALVAR ESCOLA</button>
   </form>
 </mat-card>

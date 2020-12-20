@@ -28,7 +28,6 @@ export class TurmaService {
   }
 
   update(id: number, formData): Observable<number> {
-    console.log(formData);
     return this.httpClient
                .put<number>(environment.API_PATH + 'turmas/' + id, formData);
   }

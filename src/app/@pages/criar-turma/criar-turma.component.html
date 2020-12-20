@@ -2,11 +2,10 @@
   <form
     fxLayout="row wrap"
     fxLayoutAlign="center center"
-    fxLayoutGap="10px"
     [formGroup]="criarTurmaForm"
     (ngSubmit)="onSubmit()">
 
-    <div class="form-container" fxFlex="90" fxLayout="row wrap"  fxLayoutGap="10px" >
+    <div class="form-container" fxFlex="100" fxLayout="row wrap">
 
       <mat-form-field fxFlex="60" fxFlex.lt-md="100">
         <input
@@ -33,6 +32,6 @@
     </div>
 
 
-    <button fxFlex="50" mat-raised-button color="primary" type="submit" [disabled]="criarTurmaForm.invalid || isLoading">CRIAR TURMA</button>
+    <button fxFlex="50" mat-raised-button color="primary" type="submit" [disabled]="criarTurmaForm.invalid || isLoading">SALVAR TURMA</button>
   </form>
 </mat-card>
