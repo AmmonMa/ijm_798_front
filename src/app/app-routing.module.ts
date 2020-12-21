@@ -1,3 +1,4 @@
+import { UploadComponent } from './@pages/upload/upload.component';
 import { TurmaFormResolver } from './@pages/turma/turma-form/turma-form.resolver';
 import { TurmaFormComponent } from './@pages/turma/turma-form/turma-form.component';
 import { TurmaTableComponent } from './@pages/turma/turma-table/turma-table.component';
@@ -29,7 +30,8 @@ const routes: Routes = [
     component: TurmaFormComponent,
     data: { title: 'Editar Turma' },
     resolve: { turma: TurmaFormResolver }
-  }
+  },
+  { path: 'importar', component: UploadComponent, data: {title: 'Importar Escolas' } }
 ];
 
 @NgModule({

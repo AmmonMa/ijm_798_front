@@ -1,3 +1,4 @@
+import { AppUploadButtonComponent } from './components/app-upload-button/app-upload-button.component';
 import { RemoveConfirmationDialogComponent } from './dialogs/remove-confirmation-dialog.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
@@ -20,7 +21,8 @@ import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 @NgModule({
   declarations: [
-    RemoveConfirmationDialogComponent
+    RemoveConfirmationDialogComponent,
+    AppUploadButtonComponent
   ],
   imports: [
     MatToolbarModule,
@@ -58,7 +60,8 @@ import {MatSortModule} from '@angular/material/sort';
     MatDialogModule,
     MatTableModule,
     MatSortModule,
-    RemoveConfirmationDialogComponent
+    RemoveConfirmationDialogComponent,
+    AppUploadButtonComponent
   ],
   entryComponents: [
     RemoveConfirmationDialogComponent

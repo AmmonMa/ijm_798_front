@@ -1,0 +1,11 @@
+
+<div class="button-container">
+  <button [disabled]="disabled" mat-raised-button color="primary" type="button" (click)="fileInput.value = ''; fileInput.click()">
+    Escolher Arquivo
+  </button>
+  <mat-form-field>
+    <input matInput [value]="preview || ''" readonly="true">
+  </mat-form-field>
+  <input #fileInput type="file" [accept]="accept.join(',')" id="file" (change)="handleFile($event.target.files[0])">
+</div>
+

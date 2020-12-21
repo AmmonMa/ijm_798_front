@@ -1,3 +1,4 @@
+import { UploadComponent } from './@pages/upload/upload.component';
 import { TurmaFormResolver } from './@pages/turma/turma-form/turma-form.resolver';
 import { NgModule } from '@angular/core';
 import { SharedModule } from './@shared/shared.module';
@@ -25,7 +26,8 @@ import { EscolaFormComponent } from './@pages/escola/escola-form/escola-form.com
     EscolaFormComponent,
     EscolaTableComponent,
     TurmaFormComponent,
-    TurmaTableComponent
+    TurmaTableComponent,
+    UploadComponent
   ],
   imports: [
     BrowserModule,

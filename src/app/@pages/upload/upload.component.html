@@ -1,0 +1,9 @@
+
+<mat-card
+  fxLayout="column wrap"
+  fxLayoutAlign="center center"
+  fxLayoutGap="45px">
+    <app-upload-button (ngFile)="uploadFile($event);" [disabled]="isUploading"></app-upload-button>
+    <mat-spinner *ngIf="isUploading === true"></mat-spinner>
+    <h4>{{ successMessage || errorMessage }}</h4>
+</mat-card>
