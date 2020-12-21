@@ -27,16 +27,12 @@ export class EscolaService {
                .get<Escola>(environment.API_PATH + 'escolas/' + id);
   }
 
-  update(id: number, formData): Observable<number> {
-    console.log(formData);
-    return this.httpClient
-               .put<number>(environment.API_PATH + 'escolas/' + id, formData);
+  save(escola: Escola): Observable<number> {
+    return (!escola.id) ?
+      this.httpClient.post<number>(environment.API_PATH + 'escolas', escola) :
+      this.httpClient.put<number>(environment.API_PATH + 'escolas/' + escola.id, escola);
   }
 
-  create(formData): Observable<number> {
-    return this.httpClient
-               .post<number>(environment.API_PATH + 'escolas', formData);
-  }
 
   remove(id: number): Observable<boolean> {
     return this.httpClient

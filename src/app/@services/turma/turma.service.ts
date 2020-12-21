@@ -27,14 +27,10 @@ export class TurmaService {
                .get<Turma>(environment.API_PATH + 'turmas/' + id);
   }
 
-  update(id: number, formData): Observable<number> {
-    return this.httpClient
-               .put<number>(environment.API_PATH + 'turmas/' + id, formData);
-  }
-
-  create(formData): Observable<number> {
-    return this.httpClient
-               .post<number>(environment.API_PATH + 'turmas', formData);
+  save(turma: Turma): Observable<number> {
+    return (!turma.id) ?
+      this.httpClient.post<number>(environment.API_PATH + 'turmas', turma) :
+      this.httpClient.put<number>(environment.API_PATH + 'turmas/' + turma.id, turma);
   }
 
   remove(id: number): Observable<boolean> {

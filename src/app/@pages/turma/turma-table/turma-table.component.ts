@@ -1,18 +1,20 @@
-import { RemoveConfirmationDialogComponent } from './../../@shared/dialogs/remove-confirmation-dialog.component';
-import { TurmaService } from './../../@services/turma/turma.service';
+import { Escola } from './../../../@services/escola/escola.model';
+import { RemoveConfirmationDialogComponent } from './../../../@shared/dialogs/remove-confirmation-dialog.component';
+import { TurmaService } from './../../../@services/turma/turma.service';
+import { EscolaService } from './../../../@services/escola/escola.service';
+
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
-import { EscolaService } from './../../@services/escola/escola.service';
 import { MatTableDataSource } from '@angular/material/table';
+import { catchError } from 'rxjs/internal/operators/catchError';
 
 @Component({
-  selector: 'app-listar-turmas',
-  templateUrl: './listar-turmas.component.html',
-  styleUrls: ['./listar-turmas.component.css']
+  templateUrl: './turma-table.component.html',
+  styleUrls: ['./turma-table.component.css']
 })
-export class ListarTurmasComponent implements OnInit, AfterViewInit {
-  idEscola: number;
+export class TurmaTableComponent implements OnInit, AfterViewInit {
+  escolaId: number;
   nomeEscola: string;
   displayedColumns: string[] = ['id', 'nome',  'qtdAlunos', 'acoes'];
   dataSource;
@@ -29,17 +31,19 @@ export class ListarTurmasComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.activatedRoute.params.subscribe((params) => {
-      this.idEscola = params.id;
-      this.fillDataSource(this.idEscola);
+      this.escolaId = params.id;
+      this.fillDataSource(this.escolaId);
     });
   }
 
   createPage(): void {
-    this.router.navigate(['/criar-turma/' + this.idEscola]);
+    this.router.navigate(['/criar-turma/' + this.escolaId]);
   }
 
   fillDataSource(id: number): void {
-    this.escolaService.findById(id).subscribe(result => {
+    this.escolaService.findById(id)
+    .pipe(catchError( () => this.router.navigate(['/escolas'])))
+    .subscribe( (result: Escola) => {
       this.nomeEscola = result.nome;
       this.dataSource = new MatTableDataSource(result.turmas);
     });
@@ -50,7 +54,7 @@ export class ListarTurmasComponent implements OnInit, AfterViewInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result === true) {
-        this.turmaService.remove(id).subscribe(_ => this.fillDataSource(this.idEscola));
+        this.turmaService.remove(id).subscribe(() => this.fillDataSource(this.escolaId));
       }
     });
   }

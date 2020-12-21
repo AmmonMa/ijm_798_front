@@ -1,12 +1,12 @@
-import { CriarTurmaComponent } from './@pages/criar-turma/criar-turma.component';
-import { ListarTurmasComponent } from './@pages/listar-turmas/listar-turmas.component';
-import { EditarEscolaComponent } from './@pages/editar-escola/editar-escola.component';
+import { TurmaFormResolver } from './@pages/turma/turma-form/turma-form.resolver';
+import { TurmaFormComponent } from './@pages/turma/turma-form/turma-form.component';
+import { TurmaTableComponent } from './@pages/turma/turma-table/turma-table.component';
+import { EscolaTableComponent } from './@pages/escola/escola-table/escola-table.component';
+import { EscolaFormResolver } from './@pages/escola/escola-form/escola-form.resolver';
+import { EscolaFormComponent } from './@pages/escola/escola-form/escola-form.component';
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CriarEscolaComponent } from './@pages/criar-escola/criar-escola.component';
-import { ListarEscolasComponent } from './@pages/listar-escolas/listar-escolas.component';
-import { EditarTurmaComponent } from './@pages/editar-turma/editar-turma.component';
 
 const routes: Routes = [
   {
@@ -14,12 +14,22 @@ const routes: Routes = [
     pathMatch: 'full',
     redirectTo: 'escolas'
   },
-  { path: 'escolas', component: ListarEscolasComponent, data: { title: 'Listar Escolas' } },
-  { path: 'criar-escola', component: CriarEscolaComponent, data: { title: 'Criar Escola' } },
-  { path: 'editar-escola/:id', component: EditarEscolaComponent, data: { title: 'Editar Escola' } },
-  { path: 'turmas/:id', component: ListarTurmasComponent, data: { title: 'Listar Turmas da Escola' } },
-  { path: 'criar-turma/:id', component: CriarTurmaComponent, data: { title: 'Criar Turma para Escola' } },
-  { path: 'editar-turma/:id', component: EditarTurmaComponent, data: { title: 'Editar Turma' } }
+  { path: 'escolas', component: EscolaTableComponent, data: { title: 'Listar Escolas' } },
+  { path: 'criar-escola', component: EscolaFormComponent, data: { title: 'Criar Escola' } },
+  {
+    path: 'editar-escola/:id',
+    component: EscolaFormComponent,
+    data: { title: 'Editar Escola' },
+    resolve: { escola: EscolaFormResolver }
+  },
+  { path: 'turmas/:id', component: TurmaTableComponent, data: { title: 'Listar Turmas da Escola' } },
+  { path: 'criar-turma/:escolaId', component: TurmaFormComponent, data: { title: 'Criar Turma para Escola' } },
+  {
+    path: 'editar-turma/:turmaId',
+    component: TurmaFormComponent,
+    data: { title: 'Editar Turma' },
+    resolve: { turma: TurmaFormResolver }
+  }
 ];
 
 @NgModule({

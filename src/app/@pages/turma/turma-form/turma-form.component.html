@@ -2,7 +2,7 @@
   <form
     fxLayout="row wrap"
     fxLayoutAlign="center center"
-    [formGroup]="editarTurmaForm"
+    [formGroup]="turmaForm"
     (ngSubmit)="onSubmit()">
 
     <div class="form-container" fxFlex="100" fxLayout="row wrap">
@@ -32,6 +32,6 @@
     </div>
 
 
-    <button fxFlex="50" mat-raised-button color="primary" type="submit" [disabled]="editarTurmaForm.invalid || isLoading">SALVAR TURMA</button>
+    <button fxFlex="50" mat-raised-button color="primary" type="submit" [disabled]="turmaForm.invalid || isLoading">SALVAR TURMA</button>
   </form>
 </mat-card>

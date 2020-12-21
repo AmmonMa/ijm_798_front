@@ -1,17 +1,17 @@
-import { RemoveConfirmationDialogComponent } from './../../@shared/dialogs/remove-confirmation-dialog.component';
+import { RemoveConfirmationDialogComponent } from './../../../@shared/dialogs/remove-confirmation-dialog.component';
+import { EscolaService } from './../../../@services/escola/escola.service';
 import { MatDialog } from '@angular/material/dialog';
 import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
-import { EscolaService } from './../../@services/escola/escola.service';
 import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
-  selector: 'app-listar-escolas',
-  templateUrl: './listar-escolas.component.html',
-  styleUrls: ['./listar-escolas.component.css']
+  templateUrl: './escola-table.component.html',
+  styleUrls: ['./escola-table.component.css']
 })
-export class ListarEscolasComponent implements OnInit, AfterViewInit {
+export class EscolaTableComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = ['id', 'nome',  'acoes'];
   dataSource;
+
   constructor(
     private escolaService: EscolaService,
     public dialog: MatDialog) {}
@@ -25,7 +25,7 @@ export class ListarEscolasComponent implements OnInit, AfterViewInit {
   }
 
   fillDataSource(): void {
-    this.escolaService.findAll().subscribe(result => {
+    this.escolaService.findAll().subscribe((result) => {
       this.dataSource = new MatTableDataSource(result);
     });
   }
@@ -35,7 +35,7 @@ export class ListarEscolasComponent implements OnInit, AfterViewInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result === true) {
-        this.escolaService.remove(id).subscribe(_ => this.fillDataSource());
+        this.escolaService.remove(id).subscribe( () => this.fillDataSource());
       }
     });
   }

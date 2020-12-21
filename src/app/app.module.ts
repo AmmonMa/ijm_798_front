@@ -1,9 +1,4 @@
-import { EditarTurmaComponent } from './@pages/editar-turma/editar-turma.component';
-import { CriarTurmaComponent } from './@pages/criar-turma/criar-turma.component';
-import { ListarTurmasComponent } from './@pages/listar-turmas/listar-turmas.component';
-import { EditarEscolaComponent } from './@pages/editar-escola/editar-escola.component';
-import { CriarEscolaComponent } from './@pages/criar-escola/criar-escola.component';
-import { ListarEscolasComponent } from './@pages/listar-escolas/listar-escolas.component';
+import { TurmaFormResolver } from './@pages/turma/turma-form/turma-form.resolver';
 import { NgModule } from '@angular/core';
 import { SharedModule } from './@shared/shared.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -17,16 +12,20 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgProgressModule } from 'ngx-progressbar';
 import { TextMaskModule } from 'angular2-text-mask';
 
+import { TurmaFormComponent } from './@pages/turma/turma-form/turma-form.component';
+import { TurmaTableComponent } from './@pages/turma/turma-table/turma-table.component';
+import { EscolaTableComponent } from './@pages/escola/escola-table/escola-table.component';
+import { EscolaFormResolver } from './@pages/escola/escola-form/escola-form.resolver';
+import { EscolaFormComponent } from './@pages/escola/escola-form/escola-form.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ListarEscolasComponent,
-    CriarEscolaComponent,
-    EditarEscolaComponent,
-    ListarTurmasComponent,
-    CriarTurmaComponent,
-    EditarTurmaComponent
+    EscolaFormComponent,
+    EscolaTableComponent,
+    TurmaFormComponent,
+    TurmaTableComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +39,7 @@ import { TextMaskModule } from 'angular2-text-mask';
     NgProgressModule,
     TextMaskModule
   ],
-  providers: [],
+  providers: [ EscolaFormResolver, TurmaFormResolver ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,7 +2,7 @@
   <form
     fxLayout="row wrap"
     fxLayoutAlign="center center"
-    [formGroup]="criarEscolaForm"
+    [formGroup]="escolaForm"
     (ngSubmit)="onSubmit()">
 
     <div class="form-container" fxFlex="100" fxLayout="row wrap" >
@@ -71,6 +71,6 @@
 
 
 
-    <button fxFlex="50" mat-raised-button color="primary" type="submit" [disabled]="criarEscolaForm.invalid || isLoading">SALVAR ESCOLA</button>
+    <button fxFlex="50" mat-raised-button color="primary" type="submit" [disabled]="escolaForm.invalid || isLoading">SALVAR ESCOLA</button>
   </form>
 </mat-card>
