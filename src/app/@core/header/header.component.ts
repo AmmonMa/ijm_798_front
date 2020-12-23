@@ -1,5 +1,4 @@
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
-import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { Component, OnInit, EventEmitter, Output, OnDestroy } from '@angular/core';
 import { map, filter } from 'rxjs/operators';
 import { MatDialog } from '@angular/material/dialog';
@@ -10,12 +9,10 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: [ './header.component.css' ]
 })
 export class HeaderComponent implements OnInit, OnDestroy {
-  isHandset: boolean;
   pathTitle: string;
 
   constructor(
     private dialog: MatDialog,
-    private breakpointObserver: BreakpointObserver,
     private route: ActivatedRoute,
     private router: Router
   ) {
@@ -26,10 +23,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
         this.pathTitle = this.route.root.firstChild.snapshot.data.title;
     });
 
-    this.breakpointObserver
-          .observe(Breakpoints.Handset)
-          .pipe( map(result => result.matches) )
-          .subscribe( (result) => this.isHandset = result);
+
   }
 
   ngOnInit(): void {}
