@@ -9,7 +9,7 @@ import { MatTableDataSource } from '@angular/material/table';
   styleUrls: ['./escola-table.component.css']
 })
 export class EscolaTableComponent implements OnInit, AfterViewInit {
-  displayedColumns: string[] = ['id', 'nome',  'acoes'];
+  displayedColumns: string[] = ['nome', 'telefone', 'email',  'acoes'];
   dataSource;
 
   constructor(

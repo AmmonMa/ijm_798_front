@@ -19,6 +19,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
+import { MatTooltipModule } from '@angular/material/tooltip';
 @NgModule({
   declarations: [
     RemoveConfirmationDialogComponent,
@@ -41,7 +42,8 @@ import {MatSortModule} from '@angular/material/sort';
     MatDialogModule,
     MatSortModule,
     ReactiveFormsModule,
-    MatTableModule
+    MatTableModule,
+    MatTooltipModule
   ],
   exports: [
     MatToolbarModule,
@@ -60,6 +62,7 @@ import {MatSortModule} from '@angular/material/sort';
     MatDialogModule,
     MatTableModule,
     MatSortModule,
+    MatTooltipModule,
     RemoveConfirmationDialogComponent,
     AppUploadButtonComponent
   ],

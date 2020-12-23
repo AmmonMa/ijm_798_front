@@ -16,7 +16,7 @@ import { catchError } from 'rxjs/internal/operators/catchError';
 export class TurmaTableComponent implements OnInit, AfterViewInit {
   escolaId: number;
   nomeEscola: string;
-  displayedColumns: string[] = ['id', 'nome',  'qtdAlunos', 'acoes'];
+  displayedColumns: string[] = ['nome',  'qtdAlunos', 'acoes'];
   dataSource;
   constructor(
     private activatedRoute: ActivatedRoute,
