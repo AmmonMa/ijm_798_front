@@ -24,7 +24,7 @@ export class TurmaFormComponent implements OnInit {
       this.turmaForm = new FormGroup({
         id: new FormControl(0),
         nome: new FormControl('', {validators: [ Validators.required ]}),
-        qtdAlunos: new FormControl(0, {validators: [ Validators.required ]}),
+        qtdAlunos: new FormControl(0, {validators: [ Validators.required, Validators.min(0) ]}),
         escolaId: new FormControl(0, {validators: [ Validators.required ]})
       });
 
